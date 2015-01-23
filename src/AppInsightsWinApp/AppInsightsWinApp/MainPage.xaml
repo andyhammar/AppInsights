@@ -12,6 +12,7 @@
             <Button x:Name="Go" Content="Go" Background="DeepSkyBlue"
     			Width="200" Height="100" Click="Go_OnClick"/>
             <Button x:Name="GoToNextPage" Content="next page" Click="GoToNextPage_OnClick"/>
+            <Button x:Name="ThrowException" Content="throw exception" Click="ThrowException_OnClick"/>
         </StackPanel>
     </Grid>
 </Page>
