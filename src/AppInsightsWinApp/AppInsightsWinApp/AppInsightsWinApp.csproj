@@ -15,8 +15,8 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>AppInsightsWinApp_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <NuGetPackageImportStamp>cd1d201e</NuGetPackageImportStamp>
-    <ApplicationInsightsResourceId>/subscriptions/5238f690-245d-49fd-b3ba-3fda5a5f5ea1/resourcegroups/Default-Web-NorthEurope/providers/microsoft.insights/components/aham-appinsights</ApplicationInsightsResourceId>
+    <NuGetPackageImportStamp>6ea28711</NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/5238f690-245d-49fd-b3ba-3fda5a5f5ea1/resourcegroups/AppInsightsResourceGroup/providers/microsoft.insights/components/AppInsights-WebApp</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -124,6 +124,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="AppInsightsWinApp_TemporaryKey.pfx" />
+    <None Include="ApplicationInsights.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +146,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.0.12.0-build17386\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.winmd</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.RuntimeTelemetry.0.12.0-build17386\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.winmd</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Windows">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsStore.0.12.0-build17386\lib\win81\Microsoft.ApplicationInsights.Extensibility.Windows.winmd</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

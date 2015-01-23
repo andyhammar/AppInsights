@@ -8,11 +8,21 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-            <Button x:Name="Go" Content="Go" Background="DeepSkyBlue"
-    			Width="200" Height="100" Click="Go_OnClick"/>
-            <Button x:Name="GoToNextPage" Content="next page" Click="GoToNextPage_OnClick"/>
-            <Button x:Name="ThrowException" Content="throw exception" Click="ThrowException_OnClick"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <Button x:Name="Go" Content="Go" Background="DeepSkyBlue"
+        			Width="200" Height="100" Click="Go_OnClick"/>
+                <Button x:Name="GoToNextPage" Content="next page" Click="GoToNextPage_OnClick"/>
+                <Button x:Name="ThrowException" Content="throw exception" Click="ThrowException_OnClick"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <Button x:Name="SameSessionBeforeOffline" Content="same session - before offline" Background="DeepSkyBlue"
+        			Height="100" Click="SameSession_OnClick" HorizontalAlignment="Stretch"/>
+                <Button x:Name="SameSessionDuringOffline" Content="same session - during offline" Background="DeepSkyBlue"
+        			Height="100" Click="SameSession_OnClick" HorizontalAlignment="Stretch"/>
+                <Button x:Name="SameSessionAfterOffline" Content="same session - after offline" Background="DeepSkyBlue"
+        			Height="100" Click="SameSession_OnClick" HorizontalAlignment="Stretch"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
