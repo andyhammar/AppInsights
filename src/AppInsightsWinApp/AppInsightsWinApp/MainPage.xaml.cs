@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.ServiceModel;
+using System.Threading.Tasks;
 using Windows.Networking.Connectivity;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+using Windows.UI.Xaml.Navigation;
 using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.Extensibility;
 
 namespace AppInsightsWinApp
 {
@@ -20,6 +25,27 @@ namespace AppInsightsWinApp
         {
             _telemetryClient = new TelemetryClient();
             this.InitializeComponent();
+
+        }
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            await FetchPageToTestFiddler();
+
+            base.OnNavigatedTo(e);
+        }
+
+        private static async Task FetchPageToTestFiddler()
+        {
+            try
+            {
+                var client = new HttpClient();
+                var html = await client.GetStringAsync("http://m.di.se");
+            }
+            catch (Exception exception)
+            {
+                //ignore
+            }
         }
 
         private void Go_OnClick(object sender, RoutedEventArgs e)
@@ -63,9 +89,14 @@ namespace AppInsightsWinApp
             var text = button.Content ?? string.Empty;
 
             var profile = NetworkInformation.GetInternetConnectionProfile();
-            var level = profile.GetNetworkConnectivityLevel();
+            var level = NetworkConnectivityLevel.None;
+            try
+            {
+                level = profile.GetNetworkConnectivityLevel();
+            }
+            catch (Exception exception) { }
 
-            _telemetryClient.TrackEvent(string.Format("[conn-level: {0}] {1}", level, text));
+            _telemetryClient.TrackEvent(string.Format("[{0}][{1}] {2}", level, OfflineTextBox.Text, text));
         }
     }
 }

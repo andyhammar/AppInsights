@@ -16,6 +16,7 @@
                 <Button x:Name="ThrowException" Content="throw exception" Click="ThrowException_OnClick"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <TextBox x:Name="OfflineTextBox" Text="" Header="Custom event prefix"/>
                 <Button x:Name="SameSessionBeforeOffline" Content="same session - before offline" Background="DeepSkyBlue"
         			Height="100" Click="SameSession_OnClick" HorizontalAlignment="Stretch"/>
                 <Button x:Name="SameSessionDuringOffline" Content="same session - during offline" Background="DeepSkyBlue"
