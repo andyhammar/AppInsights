@@ -5,6 +5,17 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiSpaApp", "AiSpaApp\AiSpaApp.csproj", "{0DEDE52E-3CAC-4EC4-B382-DE1F6E23AB99}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{28084E14-044F-4F7E-B7BC-84D09462688B}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{0529FE79-A8A2-4992-8EC7-E38D1A1C420B}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\AiSpaApp-WAWS-dev.json = PublishScripts\Configurations\AiSpaApp-WAWS-dev.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0529FE79-A8A2-4992-8EC7-E38D1A1C420B} = {28084E14-044F-4F7E-B7BC-84D09462688B}
 	EndGlobalSection
 EndGlobal
