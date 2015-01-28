@@ -9,9 +9,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+<Button x:Name="PollButton" Content="POLL" Click="PollButton_OnClick"></Button>            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
                 <Button x:Name="Go" Content="Go" Background="DeepSkyBlue"
         			Width="200" Height="100" Click="Go_OnClick"/>
+                <Button x:Name="RunHeavyOperation" Content="run heavy" Click="RunHeavy_OnClick"/>
                 <Button x:Name="GoToNextPage" Content="next page" Click="GoToNextPage_OnClick"/>
                 <Button x:Name="ThrowException" Content="throw exception" Click="ThrowException_OnClick"/>
             </StackPanel>
@@ -23,6 +24,11 @@
         			Height="100" Click="SameSession_OnClick" HorizontalAlignment="Stretch"/>
                 <Button x:Name="SameSessionAfterOffline" Content="same session - after offline" Background="DeepSkyBlue"
         			Height="100" Click="SameSession_OnClick" HorizontalAlignment="Stretch"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center">
+                <Button x:Name="EnforeSessionButton"
+                        Content="Enforce session"
+                        Click="EnforeSessionButton_OnClick"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>
